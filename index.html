@@ -4,44 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maíz Innova</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- El CSS se agregará después -->
+  <!-- Íconos Font Awesome para el menú -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+  <nav class="menu-lateral">
+    <div class="menu-header">
+      <span>Menú</span>
+      <i class="fas fa-bars menu-toggle"></i>
+    </div>
+    <ul class="menu-list">
+      <li>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+      </li>
+      <li>
+        <a href="#trabajos"><i class="fas fa-briefcase"></i> Trabajos</a>
+      </li>
+      <li>
+        <a href="#proyectos"><i class="fas fa-lightbulb"></i> Proyectos</a>
+      </li>
+      <li>
+        <a href="#servicios"><i class="fas fa-seedling"></i> Servicios</a>
+      </li>
+      <li>
+        <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+      </li>
+    </ul>
+  </nav>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
+  <main class="contenido">
     <section id="inicio">
       <h1>Bienvenido a Maíz Innova</h1>
       <p>Innovación con raíces auténticas.</p>
     </section>
 
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <p>Soluciones alimentarias con identidad cultural.</p>
+    <section id="trabajos">
+      <h2>Trabajos</h2>
+      <p>Conoce nuestros trabajos realizados y casos de éxito en la industria alimentaria basada en maíz.</p>
     </section>
 
-    <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>Un equipo comprometido con la tradición y la innovación.</p>
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <p>Explora nuestros proyectos de innovación y desarrollo enfocados en el maíz y la cultura.</p>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p>Ofrecemos consultoría, talleres y desarrollo de productos alimentarios con identidad cultural.</p>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>¿Quieres colaborar o saber más? ¡Escríbenos!</p>
+      <p>¿Quieres colaborar o saber más? ¡Contáctanos!</p>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </main>
-
-  <script src="scripts/scroll.js"></script>
 </body>
 </html>
-

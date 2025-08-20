@@ -1,85 +1,179 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Fuente general moderna */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  scroll-behavior: smooth;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #fdf6e3 0%, #e0c68c 100%);
+  color: #2e2e2e;
 }
 
-/* Menú fijo */
-header {
+/* Menú lateral estilizado */
+.menu-lateral {
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: #1d2d44;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 1rem;
-}
-
-nav ul li {
-  margin: 0 1rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #ffd166;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ced4da;
-}
-
-/* Secciones */
-section {
-  min-height: 100vh;
-  padding: 6rem 2rem 2rem; /* espacio extra por el menú fijo */
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(140deg, #19706b 60%, #4eb367 100%);
+  box-shadow: 2px 0 14px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  z-index: 100;
+  transition: left 0.3s;
+}
+
+/* Encabezado del menú */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  transition: background-color 0.5s ease;
-  color: #1d2d44;
+  padding: 28px 24px 16px 24px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
-/* Colores por sección */
-#inicio {
-  background-color: #ffd166;
+.menu-header .menu-toggle {
+  cursor: pointer;
+  font-size: 1.4em;
+  color: #fff;
+  transition: color 0.2s;
+}
+.menu-header .menu-toggle:hover {
+  color: #c6e5b6;
 }
 
-#servicios {
-  background-color: #ced4da;
+/* Lista de opciones */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-#nosotros {
-  background-color: #1d2d44;
-  color: #ffd166;
+.menu-list li {
+  border-bottom: 1px solid #19706b44;
 }
 
-#contacto {
-  background-color: #ced4da;
+.menu-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.08em;
+  transition: background 0.18s, color 0.18s;
 }
 
-/* Títulos */
-h1, h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
+.menu-list a:hover,
+.menu-list a:focus {
+  background: #23a363;
+  color: #fffde4;
 }
 
-p {
-  max-width: 600px;
+.menu-list i {
+  font-size: 1.15em;
+  width: 26px;
   text-align: center;
-  font-size: 1.1rem;
+}
+
+/* Contenido principal desplazado */
+.contenido {
+  margin-left: 260px;
+  padding: 32px 18px 18px 18px;
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: #19706b;
+  margin-top: 0;
+}
+
+section {
+  background: #fffdf7dd;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(200,180,100,0.06);
+  margin-bottom: 34px;
+  padding: 30px 28px;
+  max-width: 700px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 16px;
+}
+form input, form textarea {
+  font-size: 1em;
+  padding: 12px;
+  border-radius: 9px;
+  border: 1px solid #c9e0c1;
+  background: #fafcf6;
+  resize: none;
+}
+form button {
+  background: linear-gradient(90deg, #19706b 60%, #23a363 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.08em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: #4eb367;
+}
+
+/* Responsive diseño móvil */
+@media (max-width: 900px) {
+  .menu-lateral {
+    width: 200px;
+  }
+  .contenido {
+    margin-left: 200px;
+    padding: 24px 8px 8px 8px;
+  }
+  section {
+    padding: 18px 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-lateral {
+    left: -200px;
+  }
+  .menu-lateral.menu-open {
+    left: 0;
+  }
+  .contenido {
+    margin-left: 0;
+    padding: 20px 4vw;
+  }
+  .menu-header .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-lateral {
+    width: 82vw;
+    left: -82vw;
+  }
+  .menu-lateral.menu-open {
+    left: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #e0c68c33;
+}
+::-webkit-scrollbar-thumb {
+  background: #19706b;
+  border-radius: 12px;
 }
